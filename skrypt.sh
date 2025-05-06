@@ -13,3 +13,9 @@ elif [[ "$1" == "--logs" ]]; then
         filename="log${i}.txt"
         echo -e "$filename\nskrypt.sh\n$(date)" > "$filename"
     done
+
+elif [[ "$1" == "--help" ]]; then
+    echo "--date        Wyświetla dzisiejszą datę"
+    echo "--logs [N]    Tworzy N plików logx.txt"
+    echo "--help        Wyświetla pomoc"
+fi
