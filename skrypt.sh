@@ -19,3 +19,8 @@ elif [[ "$1" == "--help" || "$1" == "-h" ]]; then
     echo "--logs [N], -l    Tworzy N plików logx.txt, domyślnie 100"
     echo "--help, -h        Wyświetla pomoc"
 fi
+
+elif [[ "$1" == "--init" ]]; then
+    git clone "$(git config --get remote.origin.url)" cloned_repo
+    echo "export PATH=\$PATH:$(pwd)/cloned_repo" >> ~/.bashrc
+    echo "Ścieżka dodana do PATH (na stałe po ponownym zalogowaniu)."
